@@ -23,21 +23,6 @@ with open(file_path, "r", encoding="utf-8") as f:
     
     #session è un dizionario che contiene i dati della sessione
 
-"""@bp.route("/rank", methods=["GET","POST"])
-@login_required
-def placement():
-    db = get_db()
-    
-        #quando passi i parametri devono essere una tupla anche se c'è solo un valore sennnò sqlite da errore
-        #execute da solo non restituisce il record Devi chiamare .fetchone() o .fetchall()
-    
-    totPoints=db.execute("SELECT points FROM user WHERE id = ?;", (session.get("user_id"),)).fetchone()
-        
-    #session.get("user_id") è equivalente a session["user_id"] solo che get() non genera errore se non trova la chiave del dizionario
-    if totPoints is None:
-        totPoints = {"points": 0}
-    
-    return render_template("quiz/index.html",totPoints=totPoints )"""
 
     
 @bp.route("/", methods=["GET", "POST"])
@@ -104,16 +89,6 @@ def result():
     return render_template("quiz/result.html", score=score, total=total) #quando si passa il record deve sempre essere chiave=valore ()
 
 
-"""
-@bp.route("/placement")
-@login_required
-def placement():
-    db=get_db()
-    d= db.execute(
-    "SELECT username,points FROM user",
-    ()).fetchall()
-    
-    return render_template("quiz/index.html", d=d ) #quando si passa il record deve sempre essere chiave=valore ()
 
-    """
+
 
