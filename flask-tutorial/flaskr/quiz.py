@@ -25,27 +25,37 @@ with open(file_path, "r", encoding="utf-8") as f:
 
 
     
-@bp.route("/", methods=["GET", "POST"])
+@bp.route("/quiz", methods=["GET", "POST"])
 @login_required
 def start_quiz():
     db = get_db()
-    totPoints=db.execute("SELECT points FROM user WHERE id = ?;", (session.get("user_id"),)).fetchone()
+    
+    # Prendi i punti totali dell'utente loggato
+    totPoints = db.execute(
+        "SELECT points FROM user WHERE id = ?;", 
+        (session.get("user_id"),)
+    ).fetchone()
     
     if request.method == "POST":
         category = request.form['category']
-        # Qui possiamo scegliere 5 domande casuali dalla categoria selezionata
+        # Scegli 5 domande casuali dalla categoria selezionata
         session["score"] = 0
         session["questions"] = random.sample(quiz_data[category], 5)
         session["current_index"] = 0
         return redirect(url_for("quiz.show_question"))
-    # Se è GET, mostra il form per scegliere la categoria  GET: mostra il form per scegliere la categoria
     
+    # Se è GET, mostra il form per scegliere la categoria
+    # e la classifica ordinata per punti decrescenti
+    d = db.execute(
+        "SELECT username, points FROM user ORDER BY points DESC"
+    ).fetchall()
     
-    d= db.execute(
-    "SELECT username,points FROM user",
-    ()).fetchall()
-    
-    return render_template("quiz/index.html", categories=quiz_data.keys(), totPoints=totPoints,d=d)
+    return render_template(
+        "quiz/index.html",
+        categories=quiz_data.keys(),
+        totPoints=totPoints,
+        d=d
+    )
 
 
 @bp.route("/question", methods=["GET", "POST"])
@@ -87,6 +97,7 @@ def result():
     total = len(session.get("questions", []))
     
     return render_template("quiz/result.html", score=score, total=total) #quando si passa il record deve sempre essere chiave=valore ()
+
 
 
 
