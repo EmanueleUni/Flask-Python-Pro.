@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>Quiz</h1>
+{% endblock %}
+
+{% block content %}
+
+<p>Hai {{ totPoints["points"] }} punti!</p>
+
+<form method="post">
+  <label for="category">Scegli una categoria:</label>
+  <select name="category" id="category">
+    {% for cat in categories %}
+    <option value="{{ cat }}">{{ cat }}</option>
+    {% endfor %}
+  </select>
+  <input type="submit" value="Inizia Quiz">
+</form>
+
+<hr>
+
+<h2>Classifica utenti</h2>
+<table>
+  <tr>
+    <td><strong>User: <strong></td>
+    <td><strong>Punti: <strong></td> 
+  </tr>
+  {% for user in d %}
+  <tr>
+    <td>{{ user.username }}</td>
+    <td><center>{{ user.points }}<center></td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock %}

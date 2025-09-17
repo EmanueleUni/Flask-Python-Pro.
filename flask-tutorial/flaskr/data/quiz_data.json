@@ -1,0 +1,140 @@
+{
+  "AI": [
+    {
+      "question": "Cos'è l'intelligenza artificiale?",
+      "choices": ["La simulazione di processi umani da parte delle macchine", "Un videogioco", "Un tipo di smartphone", "Un social network"],
+      "answer": "La simulazione di processi umani da parte delle macchine"
+    },
+    {
+      "question": "Chi è considerato il padre dell'intelligenza artificiale?",
+      "choices": ["Alan Turing", "Albert Einstein", "Isaac Newton", "Steve Jobs"],
+      "answer": "Alan Turing"
+    },
+    {
+      "question": "Cos'è una rete neurale artificiale?",
+      "choices": ["Un sistema ispirato al cervello umano", "Un insieme di cavi di rete", "Un programma antivirus", "Un sistema operativo"],
+      "answer": "Un sistema ispirato al cervello umano"
+    },
+    {
+      "question": "Qual è un esempio comune di IA che usiamo tutti i giorni?",
+      "choices": ["Assistenti vocali come Siri o Alexa", "Il telecomando della TV", "Una calcolatrice", "Un foglio di carta"],
+      "answer": "Assistenti vocali come Siri o Alexa"
+    },
+    {
+      "question": "Quale campo usa più comunemente l'IA?",
+      "choices": ["Riconoscimento facciale", "Pittura su tela", "Coltivazione di piante", "Scrittura di romanzi"],
+      "answer": "Riconoscimento facciale"
+    },
+    {
+      "question": "Che cosa significa 'apprendimento automatico'?",
+      "choices": ["I computer imparano dai dati", "I computer imparano da soli a programmare", "Le persone imparano più velocemente", "I computer imparano a parlare"],
+      "answer": "I computer imparano dai dati"
+    },
+    {
+      "question": "Quale dei seguenti NON è un esempio di IA?",
+      "choices": ["Un tostapane", "Un chatbot", "Un sistema di raccomandazioni di Netflix", "Un'auto a guida autonoma"],
+      "answer": "Un tostapane"
+    },
+    {
+      "question": "Cos'è il 'training' di un modello di IA?",
+      "choices": ["L'addestramento del modello usando molti dati", "L'installazione di un software", "L'aggiornamento del sistema operativo", "L'accensione del computer"],
+      "answer": "L'addestramento del modello usando molti dati"
+    },
+    {
+      "question": "Quale azienda ha creato ChatGPT?",
+      "choices": ["OpenAI", "Google", "Microsoft", "Apple"],
+      "answer": "OpenAI"
+    },
+    {
+      "question": "Cosa serve per addestrare un modello di machine learning?",
+      "choices": ["Dati", "Solo corrente elettrica", "Un joystick", "Un microfono"],
+      "answer": "Dati"
+    }
+  ],
+  "NLP": [
+    {
+      "question": "Cosa significa NLP?",
+      "choices": ["Natural Language Processing", "New Language Program", "Network Layer Protocol", "Natural Learning Practice"],
+      "answer": "Natural Language Processing"
+    },
+    {
+      "question": "Qual è l'obiettivo principale del NLP?",
+      "choices": ["Far capire il linguaggio umano ai computer", "Insegnare agli umani nuove lingue", "Tradurre solo testi inglesi", "Creare nuove lingue artificiali"],
+      "answer": "Far capire il linguaggio umano ai computer"
+    },
+    {
+      "question": "Quale tra questi è un assistente basato su NLP?",
+      "choices": ["Google Translate", "Paint", "Excel", "Minecraft"],
+      "answer": "Google Translate"
+    },
+    {
+      "question": "Cos'è un chatbot?",
+      "choices": ["Un programma che conversa con gli utenti", "Un robot fisico", "Un social network", "Un gioco per chat"],
+      "answer": "Un programma che conversa con gli utenti"
+    },
+    {
+      "question": "Cosa fa l'analisi del sentiment?",
+      "choices": ["Capisce se un testo è positivo o negativo", "Conta le parole in un testo", "Traduce lingue", "Riconosce immagini"],
+      "answer": "Capisce se un testo è positivo o negativo"
+    },
+    {
+      "question": "Quale di questi è un problema tipico del NLP?",
+      "choices": ["Ambiguità del linguaggio umano", "Bassa qualità video", "Poca memoria RAM", "Colori sbagliati"],
+      "answer": "Ambiguità del linguaggio umano"
+    }
+  ],
+  "Visione Computerizzata": [
+    {
+      "question": "Cos'è la visione artificiale?",
+      "choices": ["L'abilità di un computer di capire immagini e video", "Un nuovo tipo di occhiali", "Un test della vista", "Un programma per disegnare"],
+      "answer": "L'abilità di un computer di capire immagini e video"
+    },
+    {
+      "question": "Quale di queste è un'applicazione di visione artificiale?",
+      "choices": ["Riconoscimento facciale", "Scrittura di email", "Calcolo di medie scolastiche", "Creazione di musica"],
+      "answer": "Riconoscimento facciale"
+    },
+    {
+      "question": "Quale strumento usiamo per catturare immagini?",
+      "choices": ["Una fotocamera", "Una stampante", "Una tastiera", "Un altoparlante"],
+      "answer": "Una fotocamera"
+    },
+    {
+      "question": "Quale rete neurale è famosa per riconoscere immagini?",
+      "choices": ["Convolutional Neural Network (CNN)", "Ricorsive Network", "Transformers", "GAN"],
+      "answer": "Convolutional Neural Network (CNN)"
+    },
+    {
+      "question": "Per cosa serve il riconoscimento oggetti?",
+      "choices": ["Per identificare oggetti in una foto", "Per scrivere più veloce", "Per ascoltare musica", "Per navigare su internet"],
+      "answer": "Per identificare oggetti in una foto"
+    }
+  ],
+  "Python e IA": [
+    {
+      "question": "Cos'è Python?",
+      "choices": ["Un linguaggio di programmazione", "Un videogioco", "Un browser", "Un sistema operativo"],
+      "answer": "Un linguaggio di programmazione"
+    },
+    {
+      "question": "Quale libreria Python è usata per il machine learning?",
+      "choices": ["Scikit-learn", "Matplotlib", "Pandas", "Flask"],
+      "answer": "Scikit-learn"
+    },
+    {
+      "question": "Quale libreria è famosa per il deep learning?",
+      "choices": ["TensorFlow", "Flask", "Requests", "NumPy"],
+      "answer": "TensorFlow"
+    },
+    {
+      "question": "A cosa serve Pandas in Python?",
+      "choices": ["Gestire dati in tabelle", "Disegnare grafici 3D", "Fare videogiochi", "Gestire reti"],
+      "answer": "Gestire dati in tabelle"
+    },
+    {
+      "question": "Quale comando stampa qualcosa in Python?",
+      "choices": ["print()", "echo", "printf()", "write()"],
+      "answer": "print()"
+    }
+  ]
+}

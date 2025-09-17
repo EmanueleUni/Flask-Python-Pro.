@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block header %}
+<h1>Domanda {{ index }} di {{ total }}</h1>
+{% endblock %}
+
+{% block content %}
+<p>{{ question.question }}</p>
+<form method="post">
+  {% for option in options %}
+  <label><input type="radio" name="answer" value="{{ option }}" required> {{ option }}</label><br>
+  {% endfor %}
+  <input type="submit" value="Rispondi">
+</form>
+{% endblock %}

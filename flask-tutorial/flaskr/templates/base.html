@@ -1,0 +1,51 @@
+<!-- {#
+
+ Tutto ciò che è compreso tra {{ e }} è un'espressione che verrà visualizzata nel documento finale. {% e %} indicano un'istruzione di flusso di controllo come if e for. 
+
+<!-- Dopo il titolo della pagina e prima del contenuto, il modello esegue un ciclo su ogni messaggio restituito da get_flashed_messages(). Hai utilizzato flash() nelle viste per mostrare i messaggi di errore e questo è il codice che li visualizzerà.
+
+
+{% block title %} cambierà il titolo visualizzato nella scheda e nella finestra del browser. 
+{% block header %} è simile a title, ma cambierà il titolo visualizzato nella pagina. 
+{% block content %} è la posizione in cui va inserito il contenuto di ogni pagina, come il modulo di accesso o un post del blog.  #}-->
+
+
+
+
+<!doctype html>
+<title>{% block title %}{% endblock %} - Python Pro</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<nav>
+  <h1>Python Pro.</h1>
+  <ul>
+    {% if g.user %}
+	  <li><a href="{{ url_for('quiz.start_quiz') }}">Quiz</a>
+	  <li><a href="{{ url_for('weather.index') }}">Home</a>
+      <li><span>{{ g.user['username'] }}</span>
+      <li><a href="{{ url_for('auth.logout') }}">Log Out</a>
+    {% else %}
+	  <li><a href="{{ url_for('weather.index') }}">Home</a>
+      <li><a href="{{ url_for('auth.register') }}">Register</a>
+      <li><a href="{{ url_for('auth.login') }}">Log In</a>
+	  
+    {% endif %}
+  </ul>
+</nav>
+<section class="content">
+  <header>
+    {% block header %}{% endblock %}
+  </header>
+  {% for message in get_flashed_messages() %} 
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  {% block content %}{% endblock %}
+</section>
+
+<footer style="margin-top:2rem; padding:1rem; text-align:center; font-size:0.9em; color:gray; border-top:1px solid lightgray;">
+    <p>
+      Data di creazione: 17/09/2025 <br>
+      Sviluppatore: Emanuele Izzo     <a href="https://www.linkedin.com/in/emanuele-izzo-9b1114293" target="_blank">LinkedIn</a><br>
+      
+    </p>
+  </footer>
+</body>

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+ 
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+	<h1>Previsioni meteo</h1>
+	<h2>{{ wd }} {{ oggi }}</h2>
+  </div>
+  
+
+  <form method="post">
+    <input type="text" name="city" placeholder="Inserisci città" required>
+    <input type="submit" value="Cerca">
+  </form>
+
+  {% if error %}
+    <p class="flash">{{ error }}</p>
+  {% endif %}
+
+  {% if previsioni_per_giorno %}
+    <h2>Previsioni per {{ city }}</h2>
+	
+
+	{% for giorno, previs in previsioni_per_giorno.items() %}
+		{% if loop.index0 < 3 %}
+		  <h3>{{ previs[0].giorno_settimana }} {{ previs[0].giorno }}:</h3>
+		  <table class="weather-table">
+			<tr>
+			  <th>Ora</th>
+			  <th>Temperatura (°C)</th>
+			  <th>Descrizione</th>
+			</tr>
+			{% for p in previs %}
+			<tr>
+			  <td>{{ p.ora }}</td>
+			  <td>{{ p.temp }}</td>
+			  <td>{{ p.desc }}</td>
+			</tr>
+			{% endfor %}
+		  </table>
+		{% endif %}
+	{% endfor %}
+  {% endif %}
+{% endblock %}
