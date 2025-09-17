@@ -34,11 +34,11 @@ def create_app(test_config=None):
     from .db import init_app  #importo la funzione init_app() che chiama init_db() che inizializa il db
     init_app(app)
 
+    from .weather import bp as weather_bp
+    app.register_blueprint(weather_bp, url_prefix='/')
+
     from . import auth        #registro il bp creato con auth
     app.register_blueprint(auth.bp)
-    
-    from .weather import bp as weather_bp
-    app.register_blueprint(weather_bp, url_prefix='/weather')
     
     from . import quiz
     app.register_blueprint(quiz.bp)
@@ -48,5 +48,6 @@ def create_app(test_config=None):
     
     
     return app
+
 
 
